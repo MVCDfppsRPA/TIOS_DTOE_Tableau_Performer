@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1513,7053</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1513,7974</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -127,7 +127,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="760,6988" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="760,7909" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_DTOE_FilePath" />
       <Variable x:TypeArguments="x:String" Name="str_DetailReport_FilePath" />
@@ -414,14 +414,14 @@
       <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="False" ColumnSeparators="&#x9;" DataTable="[dt_DTOEReport]" DisplayName="Generate Data Table From Text" sap:VirtualizedContainerService.HintSize="434,233" sap2010:WorkflowViewState.IdRef="GenerateDataTable_3" Input="[str_DTOEout]" UseColumnHeader="True" />
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Total DTOE Rows Count: &quot;+dt_DTOEReport.RowCount.ToString]" />
     </Sequence>
-    <Sequence DisplayName="Crosswalk Report" sap:VirtualizedContainerService.HintSize="698,1063" sap2010:WorkflowViewState.IdRef="Sequence_16">
+    <Sequence DisplayName="Crosswalk Report" sap:VirtualizedContainerService.HintSize="698,1103" sap2010:WorkflowViewState.IdRef="Sequence_16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="" sap:VirtualizedContainerService.HintSize="636,779" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_3">
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="" sap:VirtualizedContainerService.HintSize="636,819" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_3">
         <ueab:ExcelProcessScopeX.Body>
           <ActivityAction x:TypeArguments="ui:IExcelProcess">
             <ActivityAction.Argument>
@@ -464,13 +464,13 @@
         <InArgument x:TypeArguments="sd:DataTable">[dt_DetailReportData.DefaultView.ToTable(True,"Provider Name")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_DetailReport_Filter]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="698,1993" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_DetailReport_Filter]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="698,2874" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="514,1797" sap2010:WorkflowViewState.IdRef="Sequence_20">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="514,2678" sap2010:WorkflowViewState.IdRef="Sequence_20">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dt_DetailFinal" />
               <Variable x:TypeArguments="sd:DataTable" Name="dt_DTOEFinal" />
@@ -607,17 +607,69 @@
               </Assign.Value>
             </Assign>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,173" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;To Email: &quot;+dt_DetailFinal.Rows(0).item(&quot;Provider Email&quot;).ToString.Split(Environment.NewLine.ToArray, StringSplitOptions.RemoveEmptyEntries).ToString]" />
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendEmail - Invoke Workflow File (Framework\SendEmail.xaml)" sap:VirtualizedContainerService.HintSize="452,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\SendEmail.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_ToEmail">[arr_ToEmail]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_Subject">[in_Config("DTOE_EmailSubject").ToString]</InArgument>
-                <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_EmailCC">[arr_DeptChair]</InArgument>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtDetailFinal">[dt_DetailFinal]</InArgument>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtDTOEFinal">[dt_DTOEFinal]</InArgument>
-                <InArgument x:TypeArguments="s:String[]" x:Key="in_arr_DeptChairName">[arr_DeptChairName]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_EmailTemplate">[in_Config("DTOE_EmailTemplate").ToString]</InArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
+            <If Condition="[datetime.now.DayOfWeek.ToString.Equals(&quot;Wednesday&quot;)]" DisplayName="If - UseCase1 For Wednesday" sap:VirtualizedContainerService.HintSize="452,529" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,256" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendEmail - Invoke Workflow File (Framework\SendEmail.xaml)" sap:VirtualizedContainerService.HintSize="354,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\SendEmail.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_ToEmail">[arr_ToEmail]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Subject">[in_Config("DTOE_EmailSubject").ToString]</InArgument>
+                      <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_EmailCC">[arr_DeptChair]</InArgument>
+                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtDetailFinal">[dt_DetailFinal]</InArgument>
+                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtDTOEFinal">[dt_DTOEFinal]</InArgument>
+                      <InArgument x:TypeArguments="s:String[]" x:Key="in_arr_DeptChairName">[arr_DeptChairName]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_EmailTemplate">[in_Config("DTOE_EmailTemplate").ToString]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[datetime.now.DayOfWeek.ToString.Equals(&quot;Tuesday&quot;)]" DisplayName="If - UseCase2 For Tuesday" sap:VirtualizedContainerService.HintSize="452,520" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,256" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendEmailTemplate2 - Invoke Workflow File (Framework\SendEmailTemplate2.xaml)" sap:VirtualizedContainerService.HintSize="354,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\SendEmailTemplate2.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_ToEmail">[arr_ToEmail]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Subject">[in_Config("DTOE_EmailSubject").ToString]</InArgument>
+                      <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_EmailCC">[arr_DeptChair]</InArgument>
+                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtDetailFinal">[dt_DetailFinal]</InArgument>
+                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtDTOEFinal">[dt_DTOEFinal]</InArgument>
+                      <InArgument x:TypeArguments="s:String[]" x:Key="in_arr_DeptChairName">[arr_DeptChairName]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_EmailTemplate">[in_Config("DTOE_EmailTemplate2").ToString]</InArgument>
+                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtCrosswalkFinal">[dt_CrosswalkFinal]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
