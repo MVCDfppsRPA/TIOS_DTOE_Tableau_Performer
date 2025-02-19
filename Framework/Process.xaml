@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1193,7880</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1128.8,7698.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -127,7 +127,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="760,7351" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="760,7416" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_DTOE_FilePath" />
       <Variable x:TypeArguments="x:String" Name="str_DetailReport_FilePath" />
@@ -151,12 +151,75 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="698,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="698,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="698,272" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="697.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="697.6,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <ui:CommentOut DisplayName="UNCOMMENT AT GO-LIVE!" sap:VirtualizedContainerService.HintSize="697.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="540.8,354.4" sap2010:WorkflowViewState.IdRef="Sequence_32">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,265.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[str_DTOE_FilePath]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("DTOE_FilePath").toString]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[str_DetailReport_FilePath]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("DetailReport_FilePath").ToString]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[str_CombinedReport_Path]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[in_Config("DTOE_CombinedReport_NetworkSharePath").ToString]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[str_Crosswalk_SheetName]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[in_Config("DTOE_Crosswalk_SheetName").ToString]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[str_Crosswalk_FilePath]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[in_Config("DTOE_Crosswalk_FilePath").ToString]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="697.6,274.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">[str_DTOE_FilePath]</OutArgument>
             </ui:AssignOperation.To>
@@ -164,7 +227,7 @@
               <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("DTOE_FilePath").toString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">[str_DetailReport_FilePath]</OutArgument>
             </ui:AssignOperation.To>
@@ -172,7 +235,7 @@
               <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("DetailReport_FilePath").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">[str_CombinedReport_Path]</OutArgument>
             </ui:AssignOperation.To>
@@ -180,7 +243,7 @@
               <InArgument x:TypeArguments="x:String">[in_Config("DTOE_CombinedReport_NetworkSharePath").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">[str_Crosswalk_SheetName]</OutArgument>
             </ui:AssignOperation.To>
@@ -188,18 +251,18 @@
               <InArgument x:TypeArguments="x:String">[in_Config("DTOE_Crosswalk_SheetName").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">[str_Crosswalk_FilePath]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("DTOE_Crosswalk_FilePath").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_Config("TEST_ DTOE_Crosswalk_FilePath").ToString]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="698,57" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="697.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_10">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="541,351" sap2010:WorkflowViewState.IdRef="Sequence_26">
           <sap:WorkflowViewStateService.ViewState>
@@ -262,7 +325,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="698,57" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="697.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_4">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="608,873" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
@@ -312,15 +375,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Sequence DisplayName="Detail Report" sap:VirtualizedContainerService.HintSize="698,1575" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence DisplayName="Detail Report" sap:VirtualizedContainerService.HintSize="697.6,1575.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ReadTextFile File="{x:Null}" Content="[str_CSVOut]" DisplayName="Read Text File" FileName="[str_DetailReport_FilePath]" sap:VirtualizedContainerService.HintSize="530,112" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="530,57" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+      <ui:ReadTextFile File="{x:Null}" Content="[str_CSVOut]" DisplayName="Read Text File" FileName="[str_DetailReport_FilePath]" sap:VirtualizedContainerService.HintSize="529.6,112.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="529.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_9">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_25">
             <sap:WorkflowViewStateService.ViewState>
