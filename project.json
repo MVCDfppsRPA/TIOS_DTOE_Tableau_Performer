@@ -41,9 +41,7 @@
       "privateWorkflows": []
     },
     "processOptions": {
-      "ignoredFiles": [
-        "Framework/Process_Old.xaml"
-      ]
+      "ignoredFiles": []
     },
     "fileInfoCollection": [
       {
