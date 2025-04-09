@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1257,5061</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1435,5034</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendEmail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -122,13 +122,13 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="654,4996" sap2010:WorkflowViewState.IdRef="Sequence_13">
+  <Sequence sap:VirtualizedContainerService.HintSize="654,4969" sap2010:WorkflowViewState.IdRef="Sequence_13">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Purpose: Sends email notifications to Physicians about their pending Open Encounters.&#xA;Input: Email Template and Data Table containing Open Encounters data.&#xA;Output: Outlook email sent to the respective Physicians.&#xA;Details: Uses a structured email template.&#xA;Includes categorized Open Encounters based on the duration they have remained open.&#xA;Ensures clear communication regarding outstanding items.&#xA;Assumption: The recipient list is correctly set.&#xA;The email template is properly formatted.&#xA;Outlook is configured and accessible." DisplayName="SendEmail - UseCase1_Physician Notification" sap:VirtualizedContainerService.HintSize="592,4908" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <Sequence sap2010:Annotation.AnnotationText="Purpose: Sends email notifications to Physicians about their pending Open Encounters.&#xA;Input: Email Template and Data Table containing Open Encounters data.&#xA;Output: Outlook email sent to the respective Physicians.&#xA;Details: Uses a structured email template.&#xA;Includes categorized Open Encounters based on the duration they have remained open.&#xA;Ensures clear communication regarding outstanding items.&#xA;Assumption: The recipient list is correctly set.&#xA;The email template is properly formatted.&#xA;Outlook is configured and accessible." DisplayName="SendEmail - UseCase1_Physician Notification" sap:VirtualizedContainerService.HintSize="592,4881" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_Body" />
         <Variable x:TypeArguments="x:String" Name="str_ProviderName" />
@@ -360,7 +360,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" ConnectionAccountName="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" AttachmentInputMode="Builder" AttachmentPaths="{x:Null}" Attachments="{x:Null}" AuthScopesInvalid="False" Bcc="{x:Null}" Body="[str_Body]" Cc="[New String(){&quot;rpabot24@uw.edu&quot;}]" ConnectionId="b35be178-4fbf-4027-9f5a-7e47c70a8833" ContinueOnError="{x:Null}" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="530,534" sap2010:WorkflowViewState.IdRef="SendMailConnections_8" Importance="Normal" InputType="HTML" Mailbox="{x:Null}" ReplyTo="{x:Null}" SaveAsDraft="False" SingleAttachment="{x:Null}" Subject="[in_Subject]" TextBody="{x:Null}" To="[{&quot;rpabot24@uw.edu&quot;}]" UseConnectionService="True" UseSharedMailbox="False">
+      <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Builder" AuthScopesInvalid="False" Body="[str_Body]" ConnectionId="b35be178-4fbf-4027-9f5a-7e47c70a8833" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="530,534" sap2010:WorkflowViewState.IdRef="SendMailConnections_8" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[in_Subject]" To="[{&quot;rpabot24@uw.edu&quot;}]" UseConnectionService="True" UseSharedMailbox="False">
         <umam:SendMailConnections.AttachmentList>
           <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="0" />
         </umam:SendMailConnections.AttachmentList>
@@ -398,7 +398,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </umam:SendMailConnections>
-      <ui:CommentOut DisplayName="Comment Out - FOR MAY GOLIVE" sap:VirtualizedContainerService.HintSize="530,84" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+      <ui:CommentOut DisplayName="Comment Out - FOR MAY GOLIVE" sap:VirtualizedContainerService.HintSize="530,57" sap2010:WorkflowViewState.IdRef="CommentOut_6">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,613" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
@@ -406,7 +406,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Builder" AuthScopesInvalid="False" Body="[str_Body]" ConnectionId="b35be178-4fbf-4027-9f5a-7e47c70a8833" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="354,525" sap2010:WorkflowViewState.IdRef="SendMailConnections_9" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[in_Subject]" To="[in_ToEmail]" UseConnectionService="True" UseSharedMailbox="False">
+            <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" ConnectionAccountName="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" AttachmentInputMode="Builder" AttachmentPaths="{x:Null}" Attachments="{x:Null}" AuthScopesInvalid="False" Bcc="{x:Null}" Body="[str_Body]" Cc="{x:Null}" ConnectionId="b35be178-4fbf-4027-9f5a-7e47c70a8833" ContinueOnError="{x:Null}" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="354,525" sap2010:WorkflowViewState.IdRef="SendMailConnections_9" Importance="Normal" InputType="HTML" Mailbox="{x:Null}" ReplyTo="{x:Null}" SaveAsDraft="False" SingleAttachment="{x:Null}" Subject="[in_Subject]" TextBody="{x:Null}" To="[in_ToEmail]" UseConnectionService="True" UseSharedMailbox="False">
               <umam:SendMailConnections.AttachmentList>
                 <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="0" />
               </umam:SendMailConnections.AttachmentList>
