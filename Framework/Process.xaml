@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1315,27351</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1315,27391</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -404,7 +404,7 @@
       </ueab:ExcelProcessScopeX>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="636,164" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Total Crosswalk Rows Count:&quot; + dt_Crosswalk.rowcount.ToString]" />
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="UseCase1 sends email notifications every Wednesday of a list of open encounters that need reconciliation older than 7+ days, with the report sent to the service Provider." DisplayName="UseCase1" sap:VirtualizedContainerService.HintSize="1042,4781" sap2010:WorkflowViewState.IdRef="Sequence_117">
+    <Sequence sap2010:Annotation.AnnotationText="UseCase1 sends email notifications every Wednesday of a list of open encounters that need reconciliation older than 7+ days, with the report sent to the service Provider." DisplayName="UseCase1" sap:VirtualizedContainerService.HintSize="1042,4781" sap2010:WorkflowViewState.IdRef="Sequence_119">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
