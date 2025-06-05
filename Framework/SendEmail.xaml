@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>931.2,5261.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1315,5401</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendEmail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -122,14 +122,14 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="654.4,5196.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+  <Sequence sap:VirtualizedContainerService.HintSize="654,5336" sap2010:WorkflowViewState.IdRef="Sequence_13">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Send UseCase1 Email Started&quot;]" />
-    <Sequence sap2010:Annotation.AnnotationText="Purpose: Sends email notifications to Physicians about their pending Open Encounters.&#xA;Input: Email Template and Data Table containing Open Encounters data.&#xA;Output: Outlook email sent to the respective Physicians.&#xA;Details: Uses a structured email template.&#xA;Includes categorized Open Encounters based on the duration they have remained open.&#xA;Ensures clear communication regarding outstanding items.&#xA;Assumption: The recipient list is correctly set.&#xA;The email template is properly formatted.&#xA;Outlook is configured and accessible." DisplayName="SendEmail - UseCase1_Physician Notification" sap:VirtualizedContainerService.HintSize="592,4933.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Send UseCase1 Email Started&quot;]" />
+    <Sequence sap2010:Annotation.AnnotationText="Purpose: Sends email notifications to Physicians about their pending Open Encounters.&#xA;Input: Email Template and Data Table containing Open Encounters data.&#xA;Output: Outlook email sent to the respective Physicians.&#xA;Details: Uses a structured email template.&#xA;Includes categorized Open Encounters based on the duration they have remained open.&#xA;Ensures clear communication regarding outstanding items.&#xA;Assumption: The recipient list is correctly set.&#xA;The email template is properly formatted.&#xA;Outlook is configured and accessible." DisplayName="SendEmail - UseCase1_Physician Notification" sap:VirtualizedContainerService.HintSize="592,5075" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_Body" />
         <Variable x:TypeArguments="x:String" Name="str_ProviderName" />
@@ -142,7 +142,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap2010:Annotation.AnnotationText="Purpose: Extracts the Provider Name from the first row of in_dtDetailFinal.&#xA;Input: in_dtDetailFinal (DataTable) with a column named &quot;Provider Name&quot;.&#xA;Output: Stores the provider name as a String in str_providerName.&#xA;Assumption: The DataTable is not empty, and the column &quot;Provider Name&quot; exists." sap:VirtualizedContainerService.HintSize="529.6,205.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign sap2010:Annotation.AnnotationText="Purpose: Extracts the Provider Name from the first row of in_dtDetailFinal.&#xA;Input: in_dtDetailFinal (DataTable) with a column named &quot;Provider Name&quot;.&#xA;Output: Stores the provider name as a String in str_providerName.&#xA;Assumption: The DataTable is not empty, and the column &quot;Provider Name&quot; exists." sap:VirtualizedContainerService.HintSize="530,201" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_ProviderName]</OutArgument>
         </Assign.To>
@@ -155,14 +155,14 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <ui:ReadTextFile File="{x:Null}" sap2010:Annotation.AnnotationText="Purpose: Reads an email template from a text file.&#xA;Input: File path of the email template (should be predefined or dynamically set).&#xA;Output: Stores the file content in on_emailtemplate (String).&#xA;Dependency: Ensure the file exists at the specified location before execution." Content="[str_Body]" DisplayName="Read Text File" FileName="[in_EmailTemplate]" sap:VirtualizedContainerService.HintSize="529.6,236.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+      <ui:ReadTextFile File="{x:Null}" sap2010:Annotation.AnnotationText="Purpose: Reads an email template from a text file.&#xA;Input: File path of the email template (should be predefined or dynamically set).&#xA;Output: Stores the file content in on_emailtemplate (String).&#xA;Dependency: Ensure the file exists at the specified location before execution." Content="[str_Body]" DisplayName="Read Text File" FileName="[in_EmailTemplate]" sap:VirtualizedContainerService.HintSize="530,229" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ReadTextFile>
-      <Assign sap:VirtualizedContainerService.HintSize="529.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_9">
+      <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_9">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">[in_dtDetailFinal]</OutArgument>
         </Assign.To>
@@ -170,7 +170,9 @@
           <InArgument x:TypeArguments="sd:DataTable">[in_dtDetailFinal.AsEnumerable().OrderByDescending(Function(x) Convert.ToInt32(x("Days Open"))).CopyToDataTable()]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Purpose: Converts the in_dtDetailFinal DataTable into a formatted string for use in notifications.&#xA;Input: in_dtDetailFinal (DataTable) containing detailed information.&#xA;Output: str_DetailTable (String) containing the formatted table representation.&#xA;Details: Iterates through the rows of in_dtDetailFinal.&#xA;Formats the data into a structured table format.&#xA;Stores the result in str_DetailTable for further use.&#xA;Assumption: in_dtDetailFinal is not empty and contains valid data.&#xA;The output format aligns with the expected structure for email or reporting." Code="Dim htmlTable As String = &quot;&lt;table border='1' style='border-collapse: collapse; width: 100%; text-align: left;'&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;tr style='background-color: #4CAF50; color: white; font-weight: bold;'&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Provider Name&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;MRN&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Service Date&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Days Open&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Epic Dept Name&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Encounter Type&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Status&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;/tr&gt;&quot;&#xA;&#xA;If YourDataTable IsNot Nothing AndAlso YourDataTable.Rows.Count &gt; 0 Then&#xA;    For Each row As DataRow In YourDataTable.Rows&#xA;        htmlTable &amp;= &quot;&lt;tr&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Provider Name&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;MRN&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Service Date&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;&#x9;&#x9;htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Days Open&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Epic Dept Name&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Encounter Type&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Status&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;&#x9;&#x9;htmlTable &amp;= &quot;&lt;/tr&gt;&quot;&#xA;    Next&#xA;Else&#xA;    htmlTable &amp;= &quot;&lt;tr&gt;&lt;td colspan='3' style='padding: 8px; text-align: center;'&gt;No Data Available&lt;/td&gt;&lt;/tr&gt;&quot;&#xA;End If&#xA;&#xA;htmlTable &amp;= &quot;&lt;/table&gt;&quot;&#xA;&#xA;' Assign the HTML table output&#xA;Out_HtmlTable = htmlTable&#xA;" DisplayName="Invoke Code - Detail Table" sap:VirtualizedContainerService.HintSize="529.6,416.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:RemoveDuplicateRows OutputDataTable="{x:Null}" DataTable="[in_dtDetailFinal]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="530,112" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" />
+      <ui:RemoveDuplicateRows OutputDataTable="{x:Null}" DataTable="[in_dtDTOEFinal]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="530,112" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_2" />
+      <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Purpose: Converts the in_dtDetailFinal DataTable into a formatted string for use in notifications.&#xA;Input: in_dtDetailFinal (DataTable) containing detailed information.&#xA;Output: str_DetailTable (String) containing the formatted table representation.&#xA;Details: Iterates through the rows of in_dtDetailFinal.&#xA;Formats the data into a structured table format.&#xA;Stores the result in str_DetailTable for further use.&#xA;Assumption: in_dtDetailFinal is not empty and contains valid data.&#xA;The output format aligns with the expected structure for email or reporting." Code="Dim htmlTable As String = &quot;&lt;table border='1' style='border-collapse: collapse; width: 100%; text-align: left;'&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;tr style='background-color: #4CAF50; color: white; font-weight: bold;'&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Provider Name&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;MRN&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Service Date&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Days Open&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Epic Dept Name&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Encounter Type&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Status&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;/tr&gt;&quot;&#xA;&#xA;If YourDataTable IsNot Nothing AndAlso YourDataTable.Rows.Count &gt; 0 Then&#xA;    For Each row As DataRow In YourDataTable.Rows&#xA;        htmlTable &amp;= &quot;&lt;tr&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Provider Name&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;MRN&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Service Date&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;&#x9;&#x9;htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Days Open&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Epic Dept Name&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Encounter Type&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Status&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;&#x9;&#x9;htmlTable &amp;= &quot;&lt;/tr&gt;&quot;&#xA;    Next&#xA;Else&#xA;    htmlTable &amp;= &quot;&lt;tr&gt;&lt;td colspan='3' style='padding: 8px; text-align: center;'&gt;No Data Available&lt;/td&gt;&lt;/tr&gt;&quot;&#xA;End If&#xA;&#xA;htmlTable &amp;= &quot;&lt;/table&gt;&quot;&#xA;&#xA;' Assign the HTML table output&#xA;Out_HtmlTable = htmlTable&#xA;" DisplayName="Invoke Code - Detail Table" sap:VirtualizedContainerService.HintSize="530,404" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
         <ui:InvokeCode.Arguments>
           <InArgument x:TypeArguments="sd:DataTable" x:Key="YourDataTable">[in_dtDetailFinal]</InArgument>
           <OutArgument x:TypeArguments="x:String" x:Key="Out_HtmlTable">[str_DetailTable]</OutArgument>
@@ -183,7 +185,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeCode>
-      <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Purpose: Converts the in_dtDTOEFinal DataTable into a structured string format for use in notifications or reports.&#xA;Input: in_dtDTOEFinal (DataTable) containing DTOE details.&#xA;Output: str_DTOETable (String) with the formatted table representation.&#xA;Details: Iterates through in_dtDTOEFinal to extract relevant data.&#xA;Formats the data into a structured table format.&#xA;Stores the formatted table in str_DTOETable for further use.&#xA;Assumption: in_dtDTOEFinal is not empty and contains valid data.&#xA;The output format aligns with expected email or report structures." Code="Dim htmlTable As String = &quot;&lt;table border='1' style='border-collapse: collapse; width: 100%; text-align: left;'&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;tr style='background-color: #4CAF50; color: white; font-weight: bold;'&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Provider Name&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Epic Dept Name&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;8-14 days&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;15-21 days&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;22-30 days&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;31+ days&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Grand Total&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;/tr&gt;&quot;&#xA;&#xA;If YourDataTable IsNot Nothing AndAlso YourDataTable.Rows.Count &gt; 0 Then&#xA;    For Each row As DataRow In YourDataTable.Rows&#xA;        htmlTable &amp;= &quot;&lt;tr&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Provider Name&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Epic Dept Name&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;8-14 days&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;15-21 days&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;22-30 days&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;31+ days&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Grand Total&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;/tr&gt;&quot;&#xA;    Next&#xA;Else&#xA;    htmlTable &amp;= &quot;&lt;tr&gt;&lt;td colspan='3' style='padding: 8px; text-align: center;'&gt;No Data Available&lt;/td&gt;&lt;/tr&gt;&quot;&#xA;End If&#xA;&#xA;htmlTable &amp;= &quot;&lt;/table&gt;&quot;&#xA;&#xA;' Assign the HTML table output&#xA;Out_HtmlTable = htmlTable&#xA;" DisplayName="Invoke Code - DTOE Table" sap:VirtualizedContainerService.HintSize="529.6,464.8" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+      <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Purpose: Converts the in_dtDTOEFinal DataTable into a structured string format for use in notifications or reports.&#xA;Input: in_dtDTOEFinal (DataTable) containing DTOE details.&#xA;Output: str_DTOETable (String) with the formatted table representation.&#xA;Details: Iterates through in_dtDTOEFinal to extract relevant data.&#xA;Formats the data into a structured table format.&#xA;Stores the formatted table in str_DTOETable for further use.&#xA;Assumption: in_dtDTOEFinal is not empty and contains valid data.&#xA;The output format aligns with expected email or report structures." Code="Dim htmlTable As String = &quot;&lt;table border='1' style='border-collapse: collapse; width: 100%; text-align: left;'&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;tr style='background-color: #4CAF50; color: white; font-weight: bold;'&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Provider Name&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Epic Dept Name&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;8-14 days&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;15-21 days&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;22-30 days&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;31+ days&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Grand Total&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;/tr&gt;&quot;&#xA;&#xA;If YourDataTable IsNot Nothing AndAlso YourDataTable.Rows.Count &gt; 0 Then&#xA;    For Each row As DataRow In YourDataTable.Rows&#xA;        htmlTable &amp;= &quot;&lt;tr&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Provider Name&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Epic Dept Name&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;8-14 days&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;15-21 days&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;22-30 days&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;31+ days&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Grand Total&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;/tr&gt;&quot;&#xA;    Next&#xA;Else&#xA;    htmlTable &amp;= &quot;&lt;tr&gt;&lt;td colspan='3' style='padding: 8px; text-align: center;'&gt;No Data Available&lt;/td&gt;&lt;/tr&gt;&quot;&#xA;End If&#xA;&#xA;htmlTable &amp;= &quot;&lt;/table&gt;&quot;&#xA;&#xA;' Assign the HTML table output&#xA;Out_HtmlTable = htmlTable&#xA;" DisplayName="Invoke Code - DTOE Table" sap:VirtualizedContainerService.HintSize="530,449" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
         <ui:InvokeCode.Arguments>
           <InArgument x:TypeArguments="sd:DataTable" x:Key="YourDataTable">[in_dtDTOEFinal]</InArgument>
           <OutArgument x:TypeArguments="x:String" x:Key="Out_HtmlTable">[str_DTOETable]</OutArgument>
@@ -196,7 +198,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeCode>
-      <Assign sap2010:Annotation.AnnotationText="Purpose: Personalizes the email body by replacing the &quot;&lt;Provider Name&gt;&quot; placeholder with the actual provider’s name.&#xA;Input: str_Body (String) – Email template containing placeholders.&#xA;str_ProviderName (String) – Actual provider name to insert.&#xA;Output: Updated str_Body with the provider’s name in place of the placeholder.&#xA;Assumption: str_Body contains the &quot;&lt;Provider Name&gt;&quot; placeholder.&#xA;str_ProviderName has a valid value before execution." sap:VirtualizedContainerService.HintSize="529.6,253.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign sap2010:Annotation.AnnotationText="Purpose: Personalizes the email body by replacing the &quot;&lt;Provider Name&gt;&quot; placeholder with the actual provider’s name.&#xA;Input: str_Body (String) – Email template containing placeholders.&#xA;str_ProviderName (String) – Actual provider name to insert.&#xA;Output: Updated str_Body with the provider’s name in place of the placeholder.&#xA;Assumption: str_Body contains the &quot;&lt;Provider Name&gt;&quot; placeholder.&#xA;str_ProviderName has a valid value before execution." sap:VirtualizedContainerService.HintSize="530,246" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_Body]</OutArgument>
         </Assign.To>
@@ -209,7 +211,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <Assign sap2010:Annotation.AnnotationText="Purpose: Inserts the formatted detail table into the email body by replacing the &quot;&lt;TableData&gt;&quot; placeholder.&#xA;Input: str_Body (String) – Email template containing placeholders.&#xA;str_DetailTable (String) – Preformatted table data for insertion.&#xA;Output: Updated str_Body with str_DetailTable replacing the &quot;&lt;TableData&gt;&quot; placeholder.&#xA;Assumption: str_Body contains the &quot;&lt;TableData&gt;&quot; placeholder.&#xA;str_DetailTable is correctly formatted and populated before replacement." sap:VirtualizedContainerService.HintSize="529.6,253.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign sap2010:Annotation.AnnotationText="Purpose: Inserts the formatted detail table into the email body by replacing the &quot;&lt;TableData&gt;&quot; placeholder.&#xA;Input: str_Body (String) – Email template containing placeholders.&#xA;str_DetailTable (String) – Preformatted table data for insertion.&#xA;Output: Updated str_Body with str_DetailTable replacing the &quot;&lt;TableData&gt;&quot; placeholder.&#xA;Assumption: str_Body contains the &quot;&lt;TableData&gt;&quot; placeholder.&#xA;str_DetailTable is correctly formatted and populated before replacement." sap:VirtualizedContainerService.HintSize="530,246" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_Body]</OutArgument>
         </Assign.To>
@@ -222,7 +224,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <Assign sap2010:Annotation.AnnotationText="Purpose: Inserts the formatted DTOE table into the email body by replacing the &quot;&lt;TableData2&gt;&quot; placeholder.&#xA;Input: str_Body (String) – Email template containing placeholders.&#xA;str_DTOETable (String) – Preformatted DTOE table data for insertion.&#xA;Output: Updated str_Body with str_DTOETable replacing the &quot;&lt;TableData2&gt;&quot; placeholder.&#xA;Assumption: str_Body contains the &quot;&lt;TableData2&gt;&quot; placeholder.&#xA;str_DTOETable is correctly formatted and populated before replacement." sap:VirtualizedContainerService.HintSize="529.6,253.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign sap2010:Annotation.AnnotationText="Purpose: Inserts the formatted DTOE table into the email body by replacing the &quot;&lt;TableData2&gt;&quot; placeholder.&#xA;Input: str_Body (String) – Email template containing placeholders.&#xA;str_DTOETable (String) – Preformatted DTOE table data for insertion.&#xA;Output: Updated str_Body with str_DTOETable replacing the &quot;&lt;TableData2&gt;&quot; placeholder.&#xA;Assumption: str_Body contains the &quot;&lt;TableData2&gt;&quot; placeholder.&#xA;str_DTOETable is correctly formatted and populated before replacement." sap:VirtualizedContainerService.HintSize="530,246" sap2010:WorkflowViewState.IdRef="Assign_4">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_Body]</OutArgument>
         </Assign.To>
@@ -235,15 +237,15 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <If Condition="[IsNothing(in_EmailCC)]" sap:VirtualizedContainerService.HintSize="529.6,468.8" sap2010:WorkflowViewState.IdRef="If_2">
+      <If Condition="[IsNothing(in_EmailCC)]" sap:VirtualizedContainerService.HintSize="530,466" sap2010:WorkflowViewState.IdRef="If_2">
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,193.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_10">
+            <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_10">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:IEnumerable(x:String)">[in_EmailCC]</OutArgument>
               </Assign.To>
@@ -254,7 +256,7 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -263,21 +265,21 @@
           </Sequence>
         </If.Else>
       </If>
-      <If sap2010:Annotation.AnnotationText="Purpose: Ensures that the primary recipient (in_ToEmail(0)) is not duplicated in the CC list (in_EmailCC(0)).&#xA;Condition: Compares the first email in To and CC lists in a case-insensitive manner.&#xA;Input: in_ToEmail(0).ToString (String) – First recipient email.&#xA;in_EmailCC(0).ToString (String) – First CC recipient email.&#xA;Output: If True → The same email exists in both lists, so duplicate handling can be applied.&#xA;If False → The emails are different, and normal email processing continues.&#xA;Assumption: Both in_ToEmail and in_EmailCC contain at least one email.&#xA;Email addresses are stored in a consistent format (e.g., trimmed, without extra spaces)." Condition="[in_ToEmail(0).tostring .ToLower.Equals(in_EmailCC(0).ToString.ToLower)]" sap:VirtualizedContainerService.HintSize="529.6,1236.8" sap2010:WorkflowViewState.IdRef="If_1">
+      <If sap2010:Annotation.AnnotationText="Purpose: Ensures that the primary recipient (in_ToEmail(0)) is not duplicated in the CC list (in_EmailCC(0)).&#xA;Condition: Compares the first email in To and CC lists in a case-insensitive manner.&#xA;Input: in_ToEmail(0).ToString (String) – First recipient email.&#xA;in_EmailCC(0).ToString (String) – First CC recipient email.&#xA;Output: If True → The same email exists in both lists, so duplicate handling can be applied.&#xA;If False → The emails are different, and normal email processing continues.&#xA;Assumption: Both in_ToEmail and in_EmailCC contain at least one email.&#xA;Email addresses are stored in a consistent format (e.g., trimmed, without extra spaces)." Condition="[in_ToEmail(0).tostring .ToLower.Equals(in_EmailCC(0).ToString.ToLower)]" sap:VirtualizedContainerService.HintSize="530,1210" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap2010:Annotation.AnnotationText="Purpose: Updates the email body by replacing Dept Chief Name placeholders with &quot;UWP Administration&quot; when the primary and CC emails are the same.&#xA;Input: str_Body (String) – Email template containing placeholders.&#xA;Output: Updated str_Body with &quot;&lt;DeptChiefName&gt;&quot; and &quot;&lt;DeptChiefNameOT&gt;&quot; replaced by &quot;UWP Administration&quot;.&#xA;Assumption: The If condition confirmed that the To Email and CC Email are identical.&#xA;str_Body contains the placeholders before execution." DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,431.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence sap2010:Annotation.AnnotationText="Purpose: Updates the email body by replacing Dept Chief Name placeholders with &quot;UWP Administration&quot; when the primary and CC emails are the same.&#xA;Input: str_Body (String) – Email template containing placeholders.&#xA;Output: Updated str_Body with &quot;&lt;DeptChiefName&gt;&quot; and &quot;&lt;DeptChiefNameOT&gt;&quot; replaced by &quot;UWP Administration&quot;.&#xA;Assumption: The If condition confirmed that the To Email and CC Email are identical.&#xA;str_Body contains the placeholders before execution." DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,424" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+            <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_6">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[str_Body]</OutArgument>
               </Assign.To>
@@ -285,7 +287,7 @@
                 <InArgument x:TypeArguments="x:String">[str_Body.Replace("&amp;lt;DeptChiefName&amp;gt;","UWP Administration")]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_7">
+            <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_7">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[str_Body]</OutArgument>
               </Assign.To>
@@ -296,14 +298,14 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence sap2010:Annotation.AnnotationText="Purpose: Dynamically updates the email body with the list of Department Chair names when the primary and CC emails are different.&#xA;Input: str_Body (String) – Email template containing placeholders.&#xA;in_arr_DeptChairName (Array of Strings) – List of Department Chair names.&#xA;Output: Updated str_Body with &quot;&lt;DeptChiefName&gt;&quot; and &quot;&lt;DeptChiefNameOT&gt;&quot; replaced by a comma-separated list of Department Chair names.&#xA;Assumption: The If condition determined that the To Email and CC Email are different.&#xA;in_arr_DeptChairName contains valid names before execution.&#xA;str_Body includes the &quot;&lt;DeptChiefName&gt;&quot; and &quot;&lt;DeptChiefNameOT&gt;&quot; placeholders before replacement." DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,479.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence sap2010:Annotation.AnnotationText="Purpose: Dynamically updates the email body with the list of Department Chair names when the primary and CC emails are different.&#xA;Input: str_Body (String) – Email template containing placeholders.&#xA;in_arr_DeptChairName (Array of Strings) – List of Department Chair names.&#xA;Output: Updated str_Body with &quot;&lt;DeptChiefName&gt;&quot; and &quot;&lt;DeptChiefNameOT&gt;&quot; replaced by a comma-separated list of Department Chair names.&#xA;Assumption: The If condition determined that the To Email and CC Email are different.&#xA;in_arr_DeptChairName contains valid names before execution.&#xA;str_Body includes the &quot;&lt;DeptChiefName&gt;&quot; and &quot;&lt;DeptChiefNameOT&gt;&quot; placeholders before replacement." DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,469" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_5">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[str_Body]</OutArgument>
               </Assign.To>
@@ -311,7 +313,7 @@
                 <InArgument x:TypeArguments="x:String">[str_Body.Replace("&amp;lt;DeptChiefName&amp;gt;",string.Join(",",in_arr_DeptChairName))]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_8">
+            <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_8">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[str_Body]</OutArgument>
               </Assign.To>
@@ -322,7 +324,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:CommentOut DisplayName="FOR TESTING - DO NOT DELETE" sap:VirtualizedContainerService.HintSize="529.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+      <ui:CommentOut DisplayName="FOR TESTING - DO NOT DELETE" sap:VirtualizedContainerService.HintSize="530,84" sap2010:WorkflowViewState.IdRef="CommentOut_7">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,619.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
             <sap:WorkflowViewStateService.ViewState>
@@ -377,7 +379,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" ConnectionAccountName="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" AttachmentInputMode="Builder" AttachmentPaths="{x:Null}" Attachments="{x:Null}" AuthScopesInvalid="False" Bcc="{x:Null}" Body="[str_Body]" Cc="{x:Null}" ConnectionId="b35be178-4fbf-4027-9f5a-7e47c70a8833" ContinueOnError="{x:Null}" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="529.6,539.2" sap2010:WorkflowViewState.IdRef="SendMailConnections_10" Importance="Normal" InputType="HTML" Mailbox="{x:Null}" ReplyTo="{x:Null}" SaveAsDraft="False" SingleAttachment="{x:Null}" Subject="[in_Subject]" TextBody="{x:Null}" To="[in_ToEmail]" UseConnectionService="True" UseSharedMailbox="False">
+      <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Builder" AuthScopesInvalid="False" Body="[str_Body]" ConnectionId="b35be178-4fbf-4027-9f5a-7e47c70a8833" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="530,534" sap2010:WorkflowViewState.IdRef="SendMailConnections_11" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[in_Subject]" To="[in_ToEmail]" UseConnectionService="True" UseSharedMailbox="False">
         <umam:SendMailConnections.AttachmentList>
           <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="0" />
         </umam:SendMailConnections.AttachmentList>
@@ -415,7 +417,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </umam:SendMailConnections>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="529.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;UseCase1 Email Successfully Sent&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;UseCase1 Email Successfully Sent&quot;]" />
     </Sequence>
   </Sequence>
 </Activity>

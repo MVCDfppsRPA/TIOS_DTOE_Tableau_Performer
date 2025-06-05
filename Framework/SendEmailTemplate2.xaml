@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1315,2501</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1315,2752</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendEmail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -118,7 +118,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Purpose: Sends email notifications to Department Leaders about their Physicians pending Open Encounters.&#xA;Input: Email Template and Data Table containing Open Encounters data.&#xA;Output: Outlook email sent to the respective Department Leaders.&#xA;Details: Uses a structured email template.&#xA;Includes categorized Open Encounters based on the duration they have remained open.&#xA;Ensures clear communication regarding outstanding items.&#xA;Assumption: The recipient list is correctly set.&#xA;The email template is properly formatted.&#xA;Outlook is configured and accessible." DisplayName="SendEmail - UseCase2_CMO_ADM_PRES_Notification" sap:VirtualizedContainerService.HintSize="496,2436" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Purpose: Sends email notifications to Department Leaders about their Physicians pending Open Encounters.&#xA;Input: Email Template and Data Table containing Open Encounters data.&#xA;Output: Outlook email sent to the respective Department Leaders.&#xA;Details: Uses a structured email template.&#xA;Includes categorized Open Encounters based on the duration they have remained open.&#xA;Ensures clear communication regarding outstanding items.&#xA;Assumption: The recipient list is correctly set.&#xA;The email template is properly formatted.&#xA;Outlook is configured and accessible." DisplayName="SendEmail - UseCase2_CMO_ADM_PRES_Notification" sap:VirtualizedContainerService.HintSize="496,2687" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_Body" />
       <Variable x:TypeArguments="x:String" Name="str_DetailTable" />
@@ -135,6 +135,8 @@
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Send UseCase2 Email Started&quot;]" />
     <ui:ReadTextFile File="{x:Null}" Content="[str_Body]" DisplayName="Read Text File" FileName="[in_EmailTemplate]" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
     <ui:RemoveDuplicateRows OutputDataTable="{x:Null}" DataTable="[in_dtDetailFinal]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" />
+    <ui:RemoveDuplicateRows OutputDataTable="{x:Null}" DataTable="[in_dtDetailFinal]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_3" />
+    <ui:RemoveDuplicateRows OutputDataTable="{x:Null}" DataTable="[in_dtDTOEFinal]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_4" />
     <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim htmlTable As String = &quot;&lt;table border='1' style='border-collapse: collapse; width: 100%; text-align: left;'&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;tr style='background-color: #4CAF50; color: white; font-weight: bold;'&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Provider Name&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;MRN&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Service Date&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Epic Dept Name&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;th style='padding: 8px;'&gt;Dept ID&lt;/th&gt;&quot;&#xA;htmlTable &amp;= &quot;&lt;/tr&gt;&quot;&#xA;&#xA;If YourDataTable IsNot Nothing AndAlso YourDataTable.Rows.Count &gt; 0 Then&#xA;    For Each row As DataRow In YourDataTable.Rows&#xA;        htmlTable &amp;= &quot;&lt;tr&gt;&quot;&#xA;&#x9;&#x9;htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Provider Name&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;MRN&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Service Date&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;&#x9;&#x9;htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Epic Dept Name&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;        htmlTable &amp;= &quot;&lt;td style='padding: 8px; border: 1px solid #ddd;'&gt;&quot; &amp; row(&quot;Dept ID custom&quot;).ToString() &amp; &quot;&lt;/td&gt;&quot;&#xA;&#x9;&#x9;htmlTable &amp;= &quot;&lt;/tr&gt;&quot;&#xA;    Next&#xA;Else&#xA;    htmlTable &amp;= &quot;&lt;tr&gt;&lt;td colspan='3' style='padding: 8px; text-align: center;'&gt;No Data Available&lt;/td&gt;&lt;/tr&gt;&quot;&#xA;End If&#xA;&#xA;htmlTable &amp;= &quot;&lt;/table&gt;&quot;&#xA;&#xA;' Assign the HTML table output&#xA;Out_HtmlTable = htmlTable&#xA;" DisplayName="Invoke Code - Detail Table" sap:VirtualizedContainerService.HintSize="434,197" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
       <ui:InvokeCode.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="YourDataTable">[in_dtDetailFinal]</InArgument>
@@ -197,7 +199,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:CommentOut DisplayName="DO NOT DELETE - FOR TESTING ONLY" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+    <ui:CommentOut DisplayName="DO NOT DELETE - FOR TESTING ONLY" sap:VirtualizedContainerService.HintSize="434,84" sap2010:WorkflowViewState.IdRef="CommentOut_13">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,634" sap2010:WorkflowViewState.IdRef="Sequence_24">
           <sap:WorkflowViewStateService.ViewState>
@@ -205,7 +207,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" ConnectionAccountName="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" AttachmentInputMode="Builder" AttachmentPaths="{x:Null}" Attachments="{x:Null}" AuthScopesInvalid="False" Bcc="{x:Null}" Body="[str_Body]" Cc="[ienStr_cleanedCCList]" ConnectionId="b35be178-4fbf-4027-9f5a-7e47c70a8833" ContinueOnError="{x:Null}" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="354,546" sap2010:WorkflowViewState.IdRef="SendMailConnections_13" Importance="Normal" InputType="HTML" Mailbox="{x:Null}" ReplyTo="{x:Null}" SaveAsDraft="False" SingleAttachment="{x:Null}" Subject="[in_Subject]" TextBody="{x:Null}" To="[New String(){&quot;rpabot24@uw.edu&quot;}]" UseConnectionService="True" UseSharedMailbox="False">
+          <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Builder" AuthScopesInvalid="False" Body="[str_Body]" Cc="[ienStr_cleanedCCList]" ConnectionId="b35be178-4fbf-4027-9f5a-7e47c70a8833" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="354,546" sap2010:WorkflowViewState.IdRef="SendMailConnections_13" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[in_Subject]" To="[New String(){&quot;rpabot24@uw.edu&quot;}]" UseConnectionService="True" UseSharedMailbox="False">
             <umam:SendMailConnections.AttachmentList>
               <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="0" />
             </umam:SendMailConnections.AttachmentList>
@@ -252,7 +254,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Builder" AuthScopesInvalid="False" Body="[str_Body]" Cc="[ienStr_cleanedCCList]" ConnectionId="b35be178-4fbf-4027-9f5a-7e47c70a8833" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="434,534" sap2010:WorkflowViewState.IdRef="SendMailConnections_14" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[in_Subject]" To="[in_ToEmail]" UseConnectionService="True" UseSharedMailbox="False">
+    <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Builder" AuthScopesInvalid="False" Body="[str_Body]" Cc="[ienStr_cleanedCCList]" ConnectionId="b35be178-4fbf-4027-9f5a-7e47c70a8833" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="434,534" sap2010:WorkflowViewState.IdRef="SendMailConnections_15" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[in_Subject]" To="[in_ToEmail]" UseConnectionService="True" UseSharedMailbox="False">
       <umam:SendMailConnections.AttachmentList>
         <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="0" />
       </umam:SendMailConnections.AttachmentList>
