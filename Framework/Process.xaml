@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1315,19470</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1315,27628</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -148,7 +148,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="912,19405" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1104,27563" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_DTOE_FilePath" />
       <Variable x:TypeArguments="x:String" Name="str_DetailReport_FilePath" />
@@ -178,9 +178,9 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="850,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="850,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="850,272" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="1042,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="1042,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1042,272" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -226,7 +226,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Sequence sap2010:Annotation.AnnotationText="Purpose: Executes the steps to generate and save the Detail Report based on input data.&#xA;Steps Involved: Data extraction from the relevant sources (e.g., databases, files).&#xA;Formatting the data for the report (e.g., converting to a DataTable or applying styles).&#xA;Saving the report to a predefined file path (str_DetailReport_FilePath).&#xA;Input: Data sources required for the report (e.g., DataTables, variables).&#xA;Output: Generated Detail Report saved at the path defined in str_DetailReport_FilePath.&#xA;Assumption: The necessary input data is available and valid for report generation.&#xA;The file path (str_DetailReport_FilePath) is accessible for saving the report." DisplayName="Detail Report" sap:VirtualizedContainerService.HintSize="850,1976" sap2010:WorkflowViewState.IdRef="Sequence_69">
+    <Sequence sap2010:Annotation.AnnotationText="Purpose: Executes the steps to generate and save the Detail Report based on input data.&#xA;Steps Involved: Data extraction from the relevant sources (e.g., databases, files).&#xA;Formatting the data for the report (e.g., converting to a DataTable or applying styles).&#xA;Saving the report to a predefined file path (str_DetailReport_FilePath).&#xA;Input: Data sources required for the report (e.g., DataTables, variables).&#xA;Output: Generated Detail Report saved at the path defined in str_DetailReport_FilePath.&#xA;Assumption: The necessary input data is available and valid for report generation.&#xA;The file path (str_DetailReport_FilePath) is accessible for saving the report." DisplayName="Detail Report" sap:VirtualizedContainerService.HintSize="1042,1976" sap2010:WorkflowViewState.IdRef="Sequence_69">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -293,7 +293,7 @@
       <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="11" DataTable="[dt_DetailReportData]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="530,218" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,164" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[dt_DetailReportData.RowCount]" />
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Purpose: Executes the necessary steps to generate and save the DTOE Report based on input data.&#xA;Steps Involved: Data extraction related to the DTOE report (e.g., from a DataTable or external source).&#xA;Formatting the extracted data into the required report format (e.g., table or text format).&#xA;Saving the DTOE report to the designated file path (str_DTOE_FilePath).&#xA;Input: Relevant data required for the DTOE report (e.g., data tables, variables).&#xA;Output: Generated DTOE Report saved at the file path defined in str_DTOE_FilePath.&#xA;Assumption: The necessary input data for the DTOE report is valid and available.&#xA;The output file path (str_DTOE_FilePath) is correct and accessible for saving the report." DisplayName="DTOE Report" sap:VirtualizedContainerService.HintSize="850,1627" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <Sequence sap2010:Annotation.AnnotationText="Purpose: Executes the necessary steps to generate and save the DTOE Report based on input data.&#xA;Steps Involved: Data extraction related to the DTOE report (e.g., from a DataTable or external source).&#xA;Formatting the extracted data into the required report format (e.g., table or text format).&#xA;Saving the DTOE report to the designated file path (str_DTOE_FilePath).&#xA;Input: Relevant data required for the DTOE report (e.g., data tables, variables).&#xA;Output: Generated DTOE Report saved at the file path defined in str_DTOE_FilePath.&#xA;Assumption: The necessary input data for the DTOE report is valid and available.&#xA;The output file path (str_DTOE_FilePath) is correct and accessible for saving the report." DisplayName="DTOE Report" sap:VirtualizedContainerService.HintSize="1042,1627" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_DTOEout" />
         <Variable x:TypeArguments="x:Int32" Name="currentIndex" />
@@ -344,7 +344,7 @@
       <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="Data\DTOE1.csv" />
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Total DTOE Rows Count: &quot;+dt_DTOEReport.RowCount.ToString]" />
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Purpose: Carries out the steps to generate and save the Crosswalk Report based on input data and mappings.&#xA;Steps Involved: Data extraction from relevant sources (e.g., DataTables, databases).&#xA;Data transformation or cross-referencing to generate the crosswalk report content.&#xA;Saving the Crosswalk Report to the file path specified in str_Crosswalk_FilePath.&#xA;Input: Data required for the report (e.g., DataTables, variables, or external datasets).&#xA;Output: Generated Crosswalk Report saved at the path defined in str_Crosswalk_FilePath.&#xA;Assumption: The necessary data and mappings for the report are valid and available.&#xA;The output file path (str_Crosswalk_FilePath) is accessible for saving the report.&#xA;The sheet name (str_Crosswalk_SheetName) in the report exists and is correctly used during report generation." DisplayName="Crosswalk Report" sap:VirtualizedContainerService.HintSize="850,1306" sap2010:WorkflowViewState.IdRef="Sequence_16">
+    <Sequence sap2010:Annotation.AnnotationText="Purpose: Carries out the steps to generate and save the Crosswalk Report based on input data and mappings.&#xA;Steps Involved: Data extraction from relevant sources (e.g., DataTables, databases).&#xA;Data transformation or cross-referencing to generate the crosswalk report content.&#xA;Saving the Crosswalk Report to the file path specified in str_Crosswalk_FilePath.&#xA;Input: Data required for the report (e.g., DataTables, variables, or external datasets).&#xA;Output: Generated Crosswalk Report saved at the path defined in str_Crosswalk_FilePath.&#xA;Assumption: The necessary data and mappings for the report are valid and available.&#xA;The output file path (str_Crosswalk_FilePath) is accessible for saving the report.&#xA;The sheet name (str_Crosswalk_SheetName) in the report exists and is correctly used during report generation." DisplayName="Crosswalk Report" sap:VirtualizedContainerService.HintSize="1042,1306" sap2010:WorkflowViewState.IdRef="Sequence_16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -404,10 +404,10 @@
       </ueab:ExcelProcessScopeX>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="636,164" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Total Crosswalk Rows Count:&quot; + dt_Crosswalk.rowcount.ToString]" />
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="UseCase1 sends email notifications every Wednesday of a list of open encounters that need reconciliation older than 7+ days, with the report sent to the service Provider." DisplayName="UseCase1" sap:VirtualizedContainerService.HintSize="850,114" sap2010:WorkflowViewState.IdRef="Sequence_120">
+    <Sequence sap2010:Annotation.AnnotationText="UseCase1 sends email notifications every Wednesday of a list of open encounters that need reconciliation older than 7+ days, with the report sent to the service Provider." DisplayName="UseCase1" sap:VirtualizedContainerService.HintSize="1042,4781" sap2010:WorkflowViewState.IdRef="Sequence_126">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
@@ -594,7 +594,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </Assign>
-                      <If sap2010:Annotation.AnnotationText="This If condition checks if the current day is Wednesday or if the DTOE_SendTestEmail setting is true.&#xA;&#xA;DateTime.Now.DayOfWeek.ToString() = &quot;Wednesday&quot; checks if today is Wednesday.&#xA;&#xA;Convert.ToBoolean(in_Config(&quot;DTOE_SendTestEmail&quot;)) checks if the configuration setting for sending a test email is enabled (true).&#xA;&#xA;The condition returns true if either today is Wednesday or if the test email setting is true." Condition="[DateTime.Now.DayOfWeek.ToString() = &quot;Wednesday&quot; OrElse Convert.ToBoolean(in_Config(&quot;DTOE_SendTestEmail&quot;))]" DisplayName="If - UseCase1 For Wednesday" sap:VirtualizedContainerService.HintSize="530,781" sap2010:WorkflowViewState.IdRef="If_15">
+                      <If sap2010:Annotation.AnnotationText="This If condition checks if the current day is Wednesday or if the DTOE_SendTestEmail setting is true.&#xA;&#xA;DateTime.Now.DayOfWeek.ToString() = &quot;Wednesday&quot; checks if today is Wednesday.&#xA;&#xA;Convert.ToBoolean(in_Config(&quot;DTOE_SendTestEmail&quot;)) checks if the configuration setting for sending a test email is enabled (true).&#xA;&#xA;The condition returns true if either today is Wednesday or if the test email setting is true." Condition="[DateTime.Now.DayOfWeek.ToString() = &quot;Wednesday&quot; OrElse Convert.ToBoolean(in_Config(&quot;DTOE_SendTestEmail&quot;))]" DisplayName="If - UseCase1 For Wednesday" sap:VirtualizedContainerService.HintSize="530,781" sap2010:WorkflowViewState.IdRef="If_34">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -720,7 +720,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="UseCase2 sends email notifications every Tuesday about delinquent providers and their open encounters that need reconciliation, with the report sent to the Clinical Medical Director or Service Chief (CMD).&#xA;&#xA;IMPORTANT: &quot;CMO&quot; in this Sequence, up to Capturing CC Leadership activity, refers to &quot;Clinical Medical Director (CMD)&quot; of the Crosswalk (Column H)." DisplayName="UseCase2" sap:VirtualizedContainerService.HintSize="850,11416" sap2010:WorkflowViewState.IdRef="Sequence_35">
+    <Sequence sap2010:Annotation.AnnotationText="UseCase2 sends email notifications every Tuesday about delinquent providers and their open encounters that need reconciliation, with the report sent to the Clinical Medical Director or Service Chief (CMD).&#xA;&#xA;IMPORTANT: &quot;CMO&quot; in this Sequence, up to Capturing CC Leadership activity, refers to &quot;Clinical Medical Director (CMD)&quot; of the Crosswalk (Column H)." DisplayName="UseCase2" sap:VirtualizedContainerService.HintSize="1042,14907" sap2010:WorkflowViewState.IdRef="Sequence_35">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_DTOEReport_Filter" />
         <Variable x:TypeArguments="sd:DataTable" Name="dt_dtoeMan" />
@@ -735,7 +735,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap2010:Annotation.AnnotationText="This activity filters dt_DTOEReport to extract only the rows where the &quot;31+ days&quot; column is numeric and its value is greater than or equal to 1.&#xA;It then saves the filtered rows into a new DataTable.&#xA;This ensures that only records with overdue amounts of 31 days or more are captured for further processing." sap:VirtualizedContainerService.HintSize="788,202" sap2010:WorkflowViewState.IdRef="Assign_49">
+      <Assign sap2010:Annotation.AnnotationText="This activity filters dt_DTOEReport to extract only the rows where the &quot;31+ days&quot; column is numeric and its value is greater than or equal to 1.&#xA;It then saves the filtered rows into a new DataTable.&#xA;This ensures that only records with overdue amounts of 31 days or more are captured for further processing." sap:VirtualizedContainerService.HintSize="980,202" sap2010:WorkflowViewState.IdRef="Assign_49">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">[dt_DTOEReport_Filter]</OutArgument>
         </Assign.To>
@@ -750,7 +750,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="CMOEmail" DataTable="[dt_DTOEReport_Filter]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="788,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1">
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="CMOEmail" DataTable="[dt_DTOEReport_Filter]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="980,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -758,7 +758,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:AddDataColumn>
-      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Chief Medical Officer EMAIL" DataTable="[dt_DTOEReport_Filter]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="788,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7">
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Chief Medical Officer EMAIL" DataTable="[dt_DTOEReport_Filter]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="980,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -766,7 +766,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:AddDataColumn>
-      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="AMD Associate Medical Director EMAIL" DataTable="[dt_DTOEReport_Filter]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="788,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_8">
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="AMD Associate Medical Director EMAIL" DataTable="[dt_DTOEReport_Filter]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="980,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -774,7 +774,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:AddDataColumn>
-      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="UWP President EMAIL" DataTable="[dt_DTOEReport_Filter]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="788,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_9">
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="UWP President EMAIL" DataTable="[dt_DTOEReport_Filter]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="980,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_9">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -782,7 +782,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:AddDataColumn>
-      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="CMOName" DataTable="[dt_DTOEReport_Filter]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="788,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2">
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="CMOName" DataTable="[dt_DTOEReport_Filter]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="980,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -790,13 +790,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:AddDataColumn>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Looping only Detail Report (export)" DataTable="[dt_DTOEReport_Filter]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="788,2751" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Looping only Detail Report (export)" DataTable="[dt_DTOEReport_Filter]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="980,4740" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body - Data Table" sap:VirtualizedContainerService.HintSize="654,2524" sap2010:WorkflowViewState.IdRef="Sequence_34">
+            <Sequence DisplayName="Body - Data Table" sap:VirtualizedContainerService.HintSize="784,4513" sap2010:WorkflowViewState.IdRef="Sequence_34">
               <Sequence.Variables>
                 <Variable x:TypeArguments="s:String[]" Name="arr_DeptChair" />
                 <Variable x:TypeArguments="s:String[]" Name="arr_ToEmail" />
@@ -808,7 +808,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap2010:Annotation.AnnotationText="Filters dt_Crosswalk to find rows where &quot;Dept ID&quot; matches &quot;Dept ID custom&quot; from CurrentRow, trimming any extra whitespace, and copies the result to a new DataTable." sap:VirtualizedContainerService.HintSize="592,172" sap2010:WorkflowViewState.IdRef="Assign_50">
+              <Assign sap2010:Annotation.AnnotationText="Filters dt_Crosswalk to find rows where &quot;Dept ID&quot; matches &quot;Dept ID custom&quot; from CurrentRow, trimming any extra whitespace, and copies the result to a new DataTable." sap:VirtualizedContainerService.HintSize="722,172" sap2010:WorkflowViewState.IdRef="Assign_50">
                 <Assign.To>
                   <OutArgument x:TypeArguments="sd:DataTable">[dt_CrosswalkFinal]</OutArgument>
                 </Assign.To>
@@ -823,10 +823,10 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
-              <If sap2010:Annotation.AnnotationText="This condition checks whether to send the UseCase2 email notifications to the Chief Medical Officer (CMO), and if undefined or empty, then uses the Assocaite Medical Director (AMD) information, and if undefined or empty, then the UWP President.&#xA;&#xA;Checks if the &quot;Clinic Medical Directors/ Service Chief&quot; value is not empty, or if bool_SameCMO is true." Condition="[Not String.IsNullOrEmpty(dt_CrosswalkFinal.Rows(0).item(&quot;Clinic Medical Directors/ Service Chief&quot;).ToString) Or bool_SameCMO]" DisplayName="If - CMO" sap:VirtualizedContainerService.HintSize="592,321" sap2010:WorkflowViewState.IdRef="If_11">
+              <If sap2010:Annotation.AnnotationText="This condition checks whether to send the UseCase2 email notifications to the Chief Medical Officer (CMO), and if undefined or empty, then uses the Assocaite Medical Director (AMD) information, and if undefined or empty, then the UWP President.&#xA;&#xA;Checks if the &quot;Clinic Medical Directors/ Service Chief&quot; value is not empty, or if bool_SameCMO is true." Condition="[Not String.IsNullOrEmpty(dt_CrosswalkFinal.Rows(0).item(&quot;Clinic Medical Directors/ Service Chief&quot;).ToString) Or bool_SameCMO]" DisplayName="If - CMO" sap:VirtualizedContainerService.HintSize="722,2310" sap2010:WorkflowViewState.IdRef="If_11">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
@@ -987,7 +987,7 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <Sequence sap2010:Annotation.AnnotationText="This sequence looks for the Chief Medical Director's reporting strucutre and copies the UseCase2 email notifciations to the defined recipents that meet the conditions." DisplayName="Capturing CC Leadership Emails" sap:VirtualizedContainerService.HintSize="592,1551" sap2010:WorkflowViewState.IdRef="Sequence_84">
+              <Sequence sap2010:Annotation.AnnotationText="This sequence looks for the Chief Medical Director's reporting strucutre and copies the UseCase2 email notifciations to the defined recipents that meet the conditions." DisplayName="Capturing CC Leadership Emails" sap:VirtualizedContainerService.HintSize="722,1551" sap2010:WorkflowViewState.IdRef="Sequence_84">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1099,7 +1099,7 @@
                   </If.Else>
                 </If>
               </Sequence>
-              <Assign sap:VirtualizedContainerService.HintSize="592,114" sap2010:WorkflowViewState.IdRef="Assign_33">
+              <Assign sap:VirtualizedContainerService.HintSize="722,114" sap2010:WorkflowViewState.IdRef="Assign_33">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Object">[CurrentRow("CMOName")]</OutArgument>
                 </Assign.To>
@@ -1107,7 +1107,7 @@
                   <InArgument x:TypeArguments="x:Object">[str_ChiefMedicalOfficer]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign sap:VirtualizedContainerService.HintSize="592,114" sap2010:WorkflowViewState.IdRef="Assign_34">
+              <Assign sap:VirtualizedContainerService.HintSize="722,114" sap2010:WorkflowViewState.IdRef="Assign_34">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Object">[CurrentRow("CMOEmail")]</OutArgument>
                 </Assign.To>
@@ -1115,7 +1115,7 @@
                   <InArgument x:TypeArguments="x:Object">[str_CMOEmail]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,164" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;CMO: &quot;+str_ChiefMedicalOfficer+vbCrLf+&quot;CMOEMail: &quot;+str_CMOEmail]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="722,164" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;CMO: &quot;+str_ChiefMedicalOfficer+vbCrLf+&quot;CMOEMail: &quot;+str_CMOEmail]" />
             </Sequence>
           </ActivityAction>
         </ui:ForEachRow.Body>
@@ -1127,7 +1127,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
-      <Sequence DisplayName="Adding CMO to DetailReport" sap:VirtualizedContainerService.HintSize="788,3800" sap2010:WorkflowViewState.IdRef="Sequence_70">
+      <Sequence DisplayName="Adding CMO to DetailReport" sap:VirtualizedContainerService.HintSize="980,5729" sap2010:WorkflowViewState.IdRef="Sequence_70">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="variable1" />
         </Sequence.Variables>
@@ -1137,7 +1137,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="726,114" sap2010:WorkflowViewState.IdRef="Assign_65">
+        <Assign sap:VirtualizedContainerService.HintSize="918,114" sap2010:WorkflowViewState.IdRef="Assign_65">
           <Assign.To>
             <OutArgument x:TypeArguments="sd:DataTable">[dt_DetailFinal]</OutArgument>
           </Assign.To>
@@ -1145,8 +1145,8 @@
             <InArgument x:TypeArguments="sd:DataTable">[dt_DetailReportData.Clone()]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="31+ days" DataTable="[dt_DetailFinal]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="726,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_11" />
-        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_DTOEReport_Filter]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="726,633" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
+        <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="31+ days" DataTable="[dt_DetailFinal]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="918,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_11" />
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_DTOEReport_Filter]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="918,633" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
@@ -1191,21 +1191,21 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachRow>
-        <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="CMOName" DataTable="[dt_DetailFinal]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="726,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" />
-        <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="CMOEmail" DataTable="[dt_DetailFinal]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="726,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6" />
-        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_DetailFinal]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="726,2279" sap2010:WorkflowViewState.IdRef="ForEachRow_7">
+        <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="CMOName" DataTable="[dt_DetailFinal]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="918,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" />
+        <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="CMOEmail" DataTable="[dt_DetailFinal]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="918,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6" />
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_DetailFinal]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="918,4208" sap2010:WorkflowViewState.IdRef="ForEachRow_7">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="692,2092" sap2010:WorkflowViewState.IdRef="Sequence_72">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="884,4021" sap2010:WorkflowViewState.IdRef="Sequence_72">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="630,2004" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="822,3933" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1213,7 +1213,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence sap:VirtualizedContainerService.HintSize="592,1753" sap2010:WorkflowViewState.IdRef="Sequence_106">
+                    <Sequence sap:VirtualizedContainerService.HintSize="784,3682" sap2010:WorkflowViewState.IdRef="Sequence_106">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="sd:DataTable" Name="dt_DTOEReport_Filter2" />
                       </Sequence.Variables>
@@ -1222,7 +1222,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap2010:Annotation.AnnotationText="This filters the rows from dt_Crosswalk where the &quot;Dept ID&quot; matches the &quot;Dept ID custom&quot; value from the CurrentRow.&#xA;&#xA;Both values are trimmed to remove leading or trailing spaces before comparison.&#xA;&#xA;Only matching rows are returned and copied into a new DataTable using CopyToDataTable()." sap:VirtualizedContainerService.HintSize="530,247" sap2010:WorkflowViewState.IdRef="Assign_61">
+                      <Assign sap2010:Annotation.AnnotationText="This filters the rows from dt_Crosswalk where the &quot;Dept ID&quot; matches the &quot;Dept ID custom&quot; value from the CurrentRow.&#xA;&#xA;Both values are trimmed to remove leading or trailing spaces before comparison.&#xA;&#xA;Only matching rows are returned and copied into a new DataTable using CopyToDataTable()." sap:VirtualizedContainerService.HintSize="722,247" sap2010:WorkflowViewState.IdRef="Assign_61">
                         <Assign.To>
                           <OutArgument x:TypeArguments="sd:DataTable">[dt_CrosswalkFinal]</OutArgument>
                         </Assign.To>
@@ -1239,10 +1239,10 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </Assign>
-                      <If Condition="[Not String.IsNullOrEmpty(dt_CrosswalkFinal.Rows(0).item(&quot;Clinic Medical Directors/ Service Chief&quot;).ToString)]" DisplayName="If - CMO" sap:VirtualizedContainerService.HintSize="530,84" sap2010:WorkflowViewState.IdRef="If_16">
+                      <If Condition="[Not String.IsNullOrEmpty(dt_CrosswalkFinal.Rows(0).item(&quot;Clinic Medical Directors/ Service Chief&quot;).ToString)]" DisplayName="If - CMO" sap:VirtualizedContainerService.HintSize="722,2013" sap2010:WorkflowViewState.IdRef="If_16">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -1379,7 +1379,7 @@
                           </Sequence>
                         </If.Else>
                       </If>
-                      <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_62">
+                      <Assign sap:VirtualizedContainerService.HintSize="722,114" sap2010:WorkflowViewState.IdRef="Assign_62">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Object">[CurrentRow("CMOEmail")]</OutArgument>
                         </Assign.To>
@@ -1387,7 +1387,7 @@
                           <InArgument x:TypeArguments="x:Object">[str_CMOEmail]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_63">
+                      <Assign sap:VirtualizedContainerService.HintSize="722,114" sap2010:WorkflowViewState.IdRef="Assign_63">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Object">[CurrentRow("CMOName")]</OutArgument>
                         </Assign.To>
@@ -1395,7 +1395,7 @@
                           <InArgument x:TypeArguments="x:Object">[str_ChiefMedicalOfficer]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:FilterDataTable DataTable="[dt_DTOEReport_Filter]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="530,193" sap2010:WorkflowViewState.IdRef="FilterDataTable_15" OutputDataTable="[dt_DTOEReport_Filter2]" SelectColumnsMode="Remove">
+                      <ui:FilterDataTable DataTable="[dt_DTOEReport_Filter]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="722,193" sap2010:WorkflowViewState.IdRef="FilterDataTable_15" OutputDataTable="[dt_DTOEReport_Filter2]" SelectColumnsMode="Remove">
                         <ui:FilterDataTable.Filters>
                           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                             <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -1414,7 +1414,7 @@
                           </scg:List>
                         </ui:FilterDataTable.SelectColumns>
                       </ui:FilterDataTable>
-                      <ui:FilterDataTable DataTable="[dt_DTOEReport_Filter2]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="530,193" sap2010:WorkflowViewState.IdRef="FilterDataTable_16" OutputDataTable="[dt_DTOEReport_Filter2]" SelectColumnsMode="Remove">
+                      <ui:FilterDataTable DataTable="[dt_DTOEReport_Filter2]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="722,193" sap2010:WorkflowViewState.IdRef="FilterDataTable_16" OutputDataTable="[dt_DTOEReport_Filter2]" SelectColumnsMode="Remove">
                         <ui:FilterDataTable.Filters>
                           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                             <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -1433,7 +1433,7 @@
                           </scg:List>
                         </ui:FilterDataTable.SelectColumns>
                       </ui:FilterDataTable>
-                      <If Condition="[dt_DTOEReport_Filter2.RowCount&gt;0]" sap:VirtualizedContainerService.HintSize="530,720" sap2010:WorkflowViewState.IdRef="If_26">
+                      <If Condition="[dt_DTOEReport_Filter2.RowCount&gt;0]" sap:VirtualizedContainerService.HintSize="722,720" sap2010:WorkflowViewState.IdRef="If_26">
                         <If.Then>
                           <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_107">
                             <sap:WorkflowViewStateService.ViewState>
@@ -1473,7 +1473,7 @@
                     </Sequence>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="596,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="788,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1500,7 +1500,7 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachRow>
       </Sequence>
-      <Assign sap2010:Annotation.AnnotationText="This creates a new DataTable from dt_DTOEReport_Filter, containing only distinct (True) values from the &quot;CMOName&quot; column.&#xA;&#xA;DefaultView.ToTable(True, &quot;CMOName&quot;) ensures duplicate entries are removed, and only unique CMO names are included in the new table." sap:VirtualizedContainerService.HintSize="788,201" sap2010:WorkflowViewState.IdRef="Assign_35">
+      <Assign sap2010:Annotation.AnnotationText="This creates a new DataTable from dt_DTOEReport_Filter, containing only distinct (True) values from the &quot;CMOName&quot; column.&#xA;&#xA;DefaultView.ToTable(True, &quot;CMOName&quot;) ensures duplicate entries are removed, and only unique CMO names are included in the new table." sap:VirtualizedContainerService.HintSize="980,201" sap2010:WorkflowViewState.IdRef="Assign_35">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">[dt_DTOE_CMO]</OutArgument>
         </Assign.To>
@@ -1513,13 +1513,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_DTOE_CMO]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="788,3180" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_DTOE_CMO]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="980,2753" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,2993" sap2010:WorkflowViewState.IdRef="Sequence_56">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,2566" sap2010:WorkflowViewState.IdRef="Sequence_56">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dt_DTOEReport_Final" />
                 <Variable x:TypeArguments="sd:DataTable" Name="dt_DetailFinal_CMO" />
@@ -1595,7 +1595,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
-              <If sap2010:Annotation.AnnotationText="This condition checks if today’s day is Tuesday or if the &quot;DTOE_SendTestEmail&quot; setting in in_Config is set to True.&#xA;&#xA;DateTime.Now.DayOfWeek.ToString() gets the current day as a string (e.g., &quot;Tuesday&quot;).&#xA;&#xA;Convert.ToBoolean(in_Config(&quot;DTOE_SendTestEmail&quot;)) converts the configuration value to a boolean to allow test email sending regardless of the day." Condition="[datetime.now.DayOfWeek.ToString() = &quot;Tuesday&quot; OrElse Convert.ToBoolean(in_Config(&quot;DTOE_SendTestEmail&quot;))]" DisplayName="If - UseCase2 For Tuesday" sap:VirtualizedContainerService.HintSize="530,933" sap2010:WorkflowViewState.IdRef="If_23">
+              <If sap2010:Annotation.AnnotationText="This condition checks if today’s day is Tuesday or if the &quot;DTOE_SendTestEmail&quot; setting in in_Config is set to True.&#xA;&#xA;DateTime.Now.DayOfWeek.ToString() gets the current day as a string (e.g., &quot;Tuesday&quot;).&#xA;&#xA;Convert.ToBoolean(in_Config(&quot;DTOE_SendTestEmail&quot;)) converts the configuration value to a boolean to allow test email sending regardless of the day." Condition="[datetime.now.DayOfWeek.ToString() = &quot;Tuesday&quot; OrElse Convert.ToBoolean(in_Config(&quot;DTOE_SendTestEmail&quot;))]" DisplayName="If - UseCase2 For Tuesday" sap:VirtualizedContainerService.HintSize="530,933" sap2010:WorkflowViewState.IdRef="If_31">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1642,43 +1642,60 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <If sap2010:Annotation.AnnotationText="This condition checks if today’s day of the month (Now.Day) is 5 (i.e., the 5th day of the month) or if the &quot;DTOE_SendTestEmail&quot; setting in in_Config is set to True.&#xA;&#xA;Now.Day retrieves the numeric day (1–31) from the current date.&#xA;&#xA;OrElse ensures that if either condition is true, the overall condition passes (e.g., allow sending even if today isn’t the 5th if test emails are enabled)." Condition="[Now.Day=5 OrElse Convert.ToBoolean(in_Config(&quot;DTOE_SendTestEmail&quot;))]" DisplayName="If - 5th of the Month Reminder (REMOVE &quot;OrElse&quot; at GOLIVE)" sap:VirtualizedContainerService.HintSize="530,825" sap2010:WorkflowViewState.IdRef="If_27">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendEmailTemplate3 - Invoke Workflow File (Framework\SendEmailTemplate3.xaml)" sap:VirtualizedContainerService.HintSize="530,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Framework\SendEmailTemplate3.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_ToEmail">[{dt_DTOEReport_Final.Rows(0)("CMOEmail").ToString}]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_Subject">[in_Config("DTOE_EmailSubject_Reminder").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_CMOName">[CurrentRow("CMOName").ToString]</InArgument>
+                  <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_CCEmail">[{dt_DTOEReport_Final.Rows(0)("Chief Medical Officer EMAIL").ToString,dt_DTOEReport_Final.Rows(0)("AMD Associate Medical Director EMAIL").ToString, dt_DTOEReport_Final.Rows(0)("UWP President EMAIL").ToString}]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_EmailTemplate">[in_Config("DTOE_EmailTemplate3").ToString]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,173" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Email Template 3 Sent Successfully For&quot; +CurrentRow(&quot;CMOName&quot;).ToString]" />
+              <ui:CommentOut DisplayName="SAVE FOR RECORD" sap:VirtualizedContainerService.HintSize="530,48" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="512,587" sap2010:WorkflowViewState.IdRef="Sequence_128">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If sap2010:Annotation.AnnotationText="This condition checks if today’s day of the month (Now.Day) is 5 (i.e., the 5th day of the month) or if the &quot;DTOE_SendTestEmail&quot; setting in in_Config is set to True.&#xA;&#xA;Now.Day retrieves the numeric day (1–31) from the current date.&#xA;&#xA;OrElse ensures that if either condition is true, the overall condition passes (e.g., allow sending even if today isn’t the 5th if test emails are enabled)." Condition="[Now.Day=15 OrElse Convert.ToBoolean(in_Config(&quot;DTOE_SendTestEmail&quot;))]" DisplayName="If - 15th of the Month Reminder (REMOVE &quot;OrElse&quot; at GOLIVE)" sap:VirtualizedContainerService.HintSize="450,499" sap2010:WorkflowViewState.IdRef="If_33">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_99">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_100">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ui:CommentOut.Body>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,429" sap2010:WorkflowViewState.IdRef="Sequence_99">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendEmailTemplate3 - Invoke Workflow File (Framework\SendEmailTemplate3.xaml)" sap:VirtualizedContainerService.HintSize="354,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Framework\SendEmailTemplate3.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_ToEmail">[{dt_DTOEReport_Final.Rows(0)("CMOEmail").ToString}]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_Subject">[in_Config("DTOE_EmailSubject_Reminder").ToString]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_CMOName">[CurrentRow("CMOName").ToString]</InArgument>
-                        <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_CCEmail">[{dt_DTOEReport_Final.Rows(0)("Chief Medical Officer EMAIL").ToString,dt_DTOEReport_Final.Rows(0)("AMD Associate Medical Director EMAIL").ToString, dt_DTOEReport_Final.Rows(0)("UWP President EMAIL").ToString}]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_EmailTemplate">[in_Config("DTOE_EmailTemplate3").ToString]</InArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Email Template 3 Sent Successfully For&quot; +CurrentRow(&quot;CMOName&quot;).ToString]" />
-                  </Sequence>
-                </If.Then>
-                <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_100">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </Sequence>
-                </If.Else>
-              </If>
+              </ui:CommentOut>
             </Sequence>
           </ActivityAction>
         </ui:ForEachRow.Body>
@@ -1690,8 +1707,8 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="850,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;All Records Processed Successfully&quot;]" />
-    <Sequence DisplayName="Email Tracking: Trend Reporting" sap:VirtualizedContainerService.HintSize="850,2100" sap2010:WorkflowViewState.IdRef="Sequence_114">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1042,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;All Records Processed Successfully&quot;]" />
+    <Sequence DisplayName="Email Tracking: Trend Reporting" sap:VirtualizedContainerService.HintSize="1042,2100" sap2010:WorkflowViewState.IdRef="Sequence_114">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_DTOE_EmailTracker" />
       </Sequence.Variables>
